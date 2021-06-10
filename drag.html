@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+   <script>
+        
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+   </script>
+</head>
+
+<body>
+
+   <div id="box" ondrop="drop(event)"
+   ondragover="allowDrop(event)"
+   style="border:1px solid black;
+   width:200px; height:200px"></div>
+
+   <img id="image" src="83f59ec7cf88c8f6ecc0428712da0cf57f16ba747138788cc3efc88a77b9b5db.jpg" draggable="true"
+   ondragstart="drag(event)" width="200" height="200" style="background-size: cover;" alt="" />
+
+   <br>
+   <section>
+       <audio src="html/Recording.m4a" controls>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ab numquam ullam perferendis asperiores maiores, cum vero nesciunt. Odit explicabo voluptatum, dolorem harum ea nemo est. Ipsam veritatis sequi nam?
+       </audio>
+       <audio controls>
+           <source src="html/Recording.m4a">
+            <!-- <source src="html/Recording.m4a"> -->
+       </audio> 
+       <!-- autoplay ------ play without user permission -->
+       <!-- loop     ------ type of replay again -->
+   </section>
+   <section>
+       <video src="html/video.mp4" width="200px" height="200px" controls ></video>
+    <video controls width="200px" height="200px">
+        <source src="html/video.mp4">
+    </video>
+   </section>
+   <br><br><br><br><br>
+   <progress min='0' max="100" value="55" width="200px" height="200px"></progress>
+   <br><br><br><br><br>
+   <svg width="500px" height="500px">
+       <circle cx='100' cy="100" r="100" fill='green'></circle>
+       <rect x="250" y="0" width="200" height="200"></rect>
+       <line x1="0" y1="250" x2="200" y2="250" style="stroke: brown; stroke-width: 5; stroke-linecap: round "></line>
+       <polyline></polyline>
+   </svg> 
+</body>
+</html>
